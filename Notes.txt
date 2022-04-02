@@ -1,0 +1,14 @@
+Relevant tweets number:  6146  out of  10295
+# Clean words
+Number of unique words: 88985
+Number of cleaned words: 72(Chosen words)
+weather: 36(Weather condition)
+human reaction: 67(Human reaction)
+road events: 5662(Road Events)
+accident: 803(Mention accident)
+caused event: 1261(Event causes)
+road activity without event: 272 (Road condition without event)
+warning: 33(warning)
+
+Number of words for each category is written in code.
+
