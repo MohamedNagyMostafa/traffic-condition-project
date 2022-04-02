@@ -228,7 +228,7 @@ def generatePerJunction(data):
         print('final scheme: ', schema)
         input()
 
-data = pd.read_csv('removedMissingData.csv')
+data = pd.read_csv('output/removedMissingData.csv')
 
 junctions = ['j1A'] + ['j'+str(i) for i in range(2, 32)]
 

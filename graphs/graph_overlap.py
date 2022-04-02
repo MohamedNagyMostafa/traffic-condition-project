@@ -5,7 +5,7 @@ from collections import defaultdict
 import seaborn as sns
 
 
-data = pd.read_csv('output/The M25 anticlockwise between junctions J13  and J12  .csv')
+data = pd.read_csv('../output/The M25 anticlockwise between junctions J13  and J12  .csv')
 
 
 dict = defaultdict(list)
