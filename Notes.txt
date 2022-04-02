@@ -12,3 +12,5 @@ warning: 33(warning)
 
 Number of words for each category is written in code.
 
+Number of dublicated tweets is  23
+Number of records with missing data:  1397
