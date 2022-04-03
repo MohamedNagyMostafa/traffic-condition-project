@@ -14,3 +14,6 @@ Number of words for each category is written in code.
 
 Number of dublicated tweets is  23
 Number of records with missing data:  1397
+
+Pattern : TRAVEL: M25 slowing generally between J9 and J12 clockwise. Particularly busy past J10 (A3).
+Scheme: slow(cause) between(connector) j9(junction) j12(junction) clockwise(direction) busy(cause) j10(junction) 

@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import re
+from data_structure.ReadScheme import *
 
 def filter_redundancy(data, junctions, name='filtered_tweets'):
     counter = 0
@@ -181,54 +183,25 @@ def removeDataWithMissingInfo(data, name = 'removedMissingData'):
 
 def generatePerJunction(data):
 
-    accepted_words = ['rain','snow','patience','patient','sad','congest','jam','delay','stop','slow','block','wait',
-                      'clos','stuffed','lock','roadwk','full','crook','heavy','obstruct','busy','stationary','standstill',
-                      'busi','heavi','shut','accident','incident','slip','trap','divert','overturn','spillage','crash','crane',
-                      'explosion','fire','burn','tch','lift','extinguish','stuck','breakdown','roll','damage','down','break','broken',
-                      'broke','abnmal','fallen','debris','repair','disrupt','collide','collision','injuries','injury','ambulance','smoke',
-                      'pain','emergency','police','officer','investigat','work','run','barrier','problem','trouble','issu','warn','caution']
-
-    directions = ['clockwise', 'anti-clockwise', 'anticlockwise']
-
-    connection_words = ['between']
-    junctions = ['j' + str(i) for i in range(2, 32)] + ['j1A']
-
-
+    scheme = ReadScheme()
+    count = 0
+    more = 0
     for i, content in enumerate(data['text']):
-        schema = ''
-        words = content.split()
-        print(words)
-        cause = []
-        direct = []
-        junct = []
-        connection = []
-        for word in words:
-            for accepted_word in accepted_words:
-                if word.lower().__contains__(accepted_word):
-                    schema += accepted_word + ' '
-                    cause.append(accepted_word)
-                    break
-            for direction in directions:
-                if word.lower().__contains__(direction):
-                    schema += direction + ' '
-                    direct.append(direction)
-                    break
 
-            for connection_word in connection_words:
-                if word.lower().__contains__(connection_word):
-                    schema += connection_word + ' '
-                    connection.append(connection_word)
-                    break
-            for junction in reversed(junctions):
-                if word.lower().__contains__(junction):
-                    schema += junction + ' '
-                    junct.append(junction)
-                    break
+        content = ' '.join(removeWords(content.split(' '), ['https']))
+        scheme.addContent(content)
+        complete, causes, directions, connections, junctions = scheme.extractSchemes()
 
-        print('final scheme: ', schema)
-        input()
-
-data = pd.read_csv('output/removedMissingData.csv')
+        if complete:
+            count+=1
+        print(content)
+        if len(connections) > 0 and len(directions) > 0:
+            print('The M25 ' ,directions[0] ,' between junctions ', [s for s in junctions])
+        elif len(junctions) > 0 and len(directions) > 0:
+            print('The M25 ' + directions[0] + ' at junction ',[s for s in junctions])
+        scheme.clear()
+    print('extract ', count , ' of ', len(data['text']), ' single: ', more)
+data = pd.read_csv('C:/Users/moham/PycharmProjects/software_paper/tweets/analysis/output/removedMissingData.csv')
 
 junctions = ['j1A'] + ['j'+str(i) for i in range(2, 32)]
 
