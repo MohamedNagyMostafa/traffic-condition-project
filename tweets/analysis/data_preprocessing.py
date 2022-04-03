@@ -1,6 +1,9 @@
+import os
+
 import pandas as pd
 import numpy as np
 import re
+from collections import defaultdict
 from data_structure.ReadScheme import *
 
 def filter_redundancy(data, junctions, name='filtered_tweets'):
@@ -183,24 +186,79 @@ def removeDataWithMissingInfo(data, name = 'removedMissingData'):
 
 def generatePerJunction(data):
 
+    nodes = os.listdir('../../output/')
+
     scheme = ReadScheme()
-    count = 0
-    more = 0
+    relevant = 0
+    count    = 0
+    error    = 0
+    out = defaultdict(list)
+    output_file = pd.DataFrame()
     for i, content in enumerate(data['text']):
+        record = data.iloc[i]
 
         content = ' '.join(removeWords(content.split(' '), ['https']))
         scheme.addContent(content)
         complete, causes, directions, connections, junctions = scheme.extractSchemes()
+        if len(connections) > 0 and len(directions) > 0 and len(junctions) > 1:
+            if directions[0] == 'anticlockwise' or directions[0].__contains__('-'):
+                jun1_ = int(junctions[0][1:])
+                jun2_ = int(junctions[1][1:])
+                sor = sorted([jun1_, jun2_])
+                for i in range(sor[0], sor[1]+1, 2) :
+                    text = 'The M25 ' + (
+                        directions[0] if not directions[0].__contains__('-') else 'anticlockwise') + ' between junctions ' \
+                           + ('J'+str(i+1) + ' and ' + 'J'+str(i))
+                    out[text].append(list(data.iloc[i].values) + [' '.join(causes)])
+            else:
+                jun1 = int(junctions[0][1:])
+                jun2 = int(junctions[1][1:])
+                sor = sorted([jun1, jun2])
+                for i in range(sor[0], sor[1]+1, 2) :
+                    text = 'The M25 ' + (
+                        directions[0] if not directions[0].__contains__('-') else 'anticlockwise') + ' between junctions ' \
+                           + ('J'+str(i) + ' and ' + 'J'+str(i+1))
+                    out[text].append(list(data.iloc[i].values) + [' '.join(causes)])
 
-        if complete:
-            count+=1
-        print(content)
-        if len(connections) > 0 and len(directions) > 0:
-            print('The M25 ' ,directions[0] ,' between junctions ', [s for s in junctions])
-        elif len(junctions) > 0 and len(directions) > 0:
-            print('The M25 ' + directions[0] + ' at junction ',[s for s in junctions])
+            if len(junctions) > 3:
+                if directions[0] == 'anticlockwise' or directions[0].__contains__('-'):
+                    jun1 = int(junctions[2][1:])
+                    jun2 = int(junctions[3][1:])
+                    sor = sorted([jun1, jun2])
+                    for i in range(sor[0], sor[1] + 1, 2):
+                        text = 'The M25 ' + (
+                            directions[0] if not directions[0].__contains__(
+                                '-') else 'anticlockwise') + ' between junctions ' \
+                               + ('J' + str(i+1) + ' and ' + 'J' + str(i))
+                        out[text].append(list(data.iloc[i].values) + [' '.join(causes)])
+                else:
+                    jun1 = int(junctions[2][1:])
+                    jun2 = int(junctions[3][1:])
+                    sor = sorted([jun1, jun2])
+                    for i in range(sor[0], sor[1] + 1, 2):
+                        text = 'The M25 ' + (
+                            directions[0] if not directions[0].__contains__(
+                                '-') else 'anticlockwise') + ' between junctions ' \
+                               + ('J' + str(i) + ' and ' + 'J' + str(i + 1))
+                        out[text].append(list(data.iloc[i].values) + [' '.join(causes)])
+
+                if len(junctions) == 3:
+                    text = 'The M25 ' + (directions[0] if not directions[0].__contains__('-') else 'anticlockwise') \
+                               + ' at junction ' + junctions[2]
+                    out[text].append(list(data.iloc[i].values) + [' '.join(causes)])
+        elif len(connections) > 0 and len(directions) > 0 and len(junctions) > 0:
+            for junction in junctions:
+                text = 'The M25 '+(directions[0] if not directions[0].__contains__('-') else 'anticlockwise') \
+                           + ' at junction ' + junction
+                out[text].append(list(data.iloc[i].values) + [' '.join(causes)])
         scheme.clear()
-    print('extract ', count , ' of ', len(data['text']), ' single: ', more)
+
+    for key in out:
+        file_out = pd.DataFrame()
+        print(len(out[key]))
+        for value in out[key]:
+            file_out = file_out.append(pd.DataFrame([value], columns=['10','10','10','tweet_id', 'text', 'created_at', 'user_id', 'user_name', 'user_description', 'followers_count', 'verified', 'cause']))
+        file_out.to_csv('ext/'+key+'.csv')
 data = pd.read_csv('C:/Users/moham/PycharmProjects/software_paper/tweets/analysis/output/removedMissingData.csv')
 
 junctions = ['j1A'] + ['j'+str(i) for i in range(2, 32)]
