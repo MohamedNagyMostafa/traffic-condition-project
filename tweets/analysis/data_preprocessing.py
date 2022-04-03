@@ -14,7 +14,7 @@ def filter_redundancy(data, junctions, name='filtered_tweets'):
         for junction in junctions:
             if data.values[i, 1].lower().__contains__(junction):
                 counter += 1
-                filtered_data = filtered_data.append(data.iloc[k])
+                filtered_data = filtered_data.append(data.iloc[i])
 
                 break
     filtered_data.to_csv(name+'.csv')
@@ -271,7 +271,66 @@ def computeDuration():
 
         sensor_data = pd.read_csv('../../output/' + sensor_file)
         tweet_data  = pd.read_csv('ext/'+file)
-        tweet_data['']
+        for tweet_date in pd.to_datetime(tweet_data['created_at']):
+            tweet_mints = tweet_date.day * 24 * 60 + tweet_date.hour * 60 + tweet_date.minute
+            start       = False
+            start_time  = -1
+            end_time    = -1
+            for i, sensor_date in enumerate(pd.to_datetime(sensor_data['date'])):
+                sensor_mints = sensor_date.day * 24 * 60 + sensor_date.hour * 60 + sensor_date.minute
+                if sensor_mints - tweet_mints < 15 and  sensor_mints - tweet_mints  >= 0 and start == False:
+                    event = sensor_data['class'].iloc[i]
+                    if int(event) == 1:
+                        start_time = tweet_mints
+                        start = True
+                    else:
+                        break
+                if start:
+                    event = sensor_data['class'].iloc[i]
+                    if  int(event) == 0:
+                        start = False
+                        end_time = sensor_mints
+                        duration += end_time - start_time
+                        count+=1
+                        print('average duration over time', duration/float(count))
+                        break
+    return duration/float(count)
+
+
+def addGroundTruth():
+    count = 0
+    duration = 0
+    for file in os.listdir('ext/'):
+        sensor_file = file[:-4] + '  ' + file[-4:]
+        if file.__contains__('between'):
+            sensor_file = file[:-11] + ' ' + file[-11:-4] + '  ' + file[-4:]
+
+        sensor_data = pd.read_csv('../../output/' + sensor_file)
+        tweet_data = pd.read_csv('ext/' + file)
+        for tweet_date in pd.to_datetime(tweet_data['created_at']):
+            tweet_mints = tweet_date.day * 24 * 60 + tweet_date.hour * 60 + tweet_date.minute
+            start = False
+            start_time = -1
+            end_time = -1
+            for i, sensor_date in enumerate(pd.to_datetime(sensor_data['date'])):
+                sensor_mints = sensor_date.day * 24 * 60 + sensor_date.hour * 60 + sensor_date.minute
+                if sensor_mints - tweet_mints < 15 and sensor_mints - tweet_mints >= 0 and start == False:
+                    event = sensor_data['class'].iloc[i]
+                    if int(event) == 1:
+                        start_time = tweet_mints
+                        start = True
+                    else:
+                        break
+                if start:
+                    event = sensor_data['class'].iloc[i]
+                    if int(event) == 0:
+                        start = False
+                        end_time = sensor_mints
+                        duration += end_time - start_time
+                        count += 1
+                        print('average duration over time', duration / float(count))
+                        break
+    return duration / float(count)
 
 data = pd.read_csv('C:/Users/moham/PycharmProjects/software_paper/tweets/analysis/output/removedMissingData.csv')
 
@@ -285,9 +344,10 @@ data = pd.read_csv('C:/Users/moham/PycharmProjects/software_paper/tweets/analysi
 #removeDublicate(data)
 #removeDataWithMissingInfo(data)
 # Tweets file for each location
-generatePerJunction(data)
+#generatePerJunction(data)
 # Compute duration, average.
-#avg_duration = computeDuration()
+avg_duration = computeDuration()
+print('average in minutes', avg_duration)
 # Matching (put words list corresponding each class
 
 # Preprocessing for neural network.
