@@ -298,8 +298,7 @@ def computeDuration():
 
 
 def addGroundTruth():
-    count = 0
-    duration = 0
+
     for file in os.listdir('ext/'):
         sensor_file = file[:-4] + '  ' + file[-4:]
         if file.__contains__('between'):
@@ -307,32 +306,29 @@ def addGroundTruth():
 
         sensor_data = pd.read_csv('../../output/' + sensor_file)
         tweet_data = pd.read_csv('ext/' + file)
-        for tweet_date in pd.to_datetime(tweet_data['created_at']):
+        data_output = pd.DataFrame()
+        for j, tweet_date in enumerate(pd.to_datetime(tweet_data['created_at'])):
             tweet_mints = tweet_date.day * 24 * 60 + tweet_date.hour * 60 + tweet_date.minute
-            start = False
-            start_time = -1
-            end_time = -1
+            found = False
             for i, sensor_date in enumerate(pd.to_datetime(sensor_data['date'])):
                 sensor_mints = sensor_date.day * 24 * 60 + sensor_date.hour * 60 + sensor_date.minute
-                if sensor_mints - tweet_mints < 15 and sensor_mints - tweet_mints >= 0 and start == False:
-                    event = sensor_data['class'].iloc[i]
-                    if int(event) == 1:
-                        start_time = tweet_mints
-                        start = True
-                    else:
-                        break
-                if start:
-                    event = sensor_data['class'].iloc[i]
-                    if int(event) == 0:
-                        start = False
-                        end_time = sensor_mints
-                        duration += end_time - start_time
-                        count += 1
-                        print('average duration over time', duration / float(count))
-                        break
-    return duration / float(count)
+                if sensor_mints - tweet_mints < 15 and sensor_mints - tweet_mints >= 0:
+                    event = sensor_data['class'].values[i]
+                    tweet_info = tweet_data.iloc[j].values
+                    found = True
+                    data_output = data_output.append(pd.DataFrame([list(tweet_info[4:]) + [event]],columns=['tweet_id', 'text', 'created_at', 'user_id', 'user_name', 'user_description', 'followers_count', 'verified', 'cause', 'class']))
+                    break
+            if found == False:
+                tweet_info = tweet_data.iloc[j].values
+                data_output = data_output.append(pd.DataFrame([list(tweet_info[4:]) + [0]],
+                                                              columns=['tweet_id', 'text', 'created_at', 'user_id',
+                                                                       'user_name', 'user_description',
+                                                                       'followers_count', 'verified', 'cause',
+                                                                       'class']))
 
-data = pd.read_csv('C:/Users/moham/PycharmProjects/software_paper/tweets/analysis/output/removedMissingData.csv')
+        data_output.to_csv('groundtruth/'+file)
+
+#data = pd.read_csv('C:/Users/moham/PycharmProjects/software_paper/tweets/analysis/output/removedMissingData.csv')
 
 #junctions = ['j1A'] + ['j'+str(i) for i in range(2, 32)]
 
@@ -346,11 +342,12 @@ data = pd.read_csv('C:/Users/moham/PycharmProjects/software_paper/tweets/analysi
 # Tweets file for each location
 #generatePerJunction(data)
 # Compute duration, average.
-avg_duration = computeDuration()
-print('average in minutes', avg_duration)
+#avg_duration = computeDuration()
+#print('average in minutes', avg_duration)
 # Matching (put words list corresponding each class
-
+#addGroundTruth()
 # Preprocessing for neural network.
+
 # Training & Testing.
 
 
