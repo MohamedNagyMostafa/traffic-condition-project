@@ -34,6 +34,32 @@ def read_data():
 
     return data
 
+def write_data(model):
+    MAIN_PATH = 'groundtruth/'
+
+    for file in os.listdir(MAIN_PATH):
+        tweet_data = pd.read_csv(MAIN_PATH + file)
+
+        one_hot_encoding = np.zeros((len(tweet_data), len(accepted_words)))
+        for i, cause in enumerate(tweet_data['cause']):
+            if type(cause) == str:
+                for word in cause.split():
+                    index = np.where(accepted_words == word)
+                    one_hot_encoding[i, index] = 1
+
+        X_train = np.asarray(one_hot_encoding).astype(np.float32)
+
+        pred = model.predict(X_train)
+        pred[pred >= 0.5]   = 1
+        pred[pred < 0.5]    = 0
+
+        data_pred = np.concatenate((tweet_data.values, pred), axis=1)
+        out = pd.DataFrame(data_pred[:,1:], columns=['tweet_id', 'text', 'created_at', 'user_id',
+                                                                       'user_name', 'user_description',
+                                                                       'followers_count', 'verified', 'cause',
+                                                                       'class', 'predicted'])
+        out.to_csv('predicted_output/'+ file)
+
 
 data = read_data()
 total_records = len(data)
@@ -54,6 +80,7 @@ for i, cause in enumerate(data[:,0]):
         for word in words:
             index = np.where(accepted_words == word)
             one_hot_encoding[i, index] = 1
+
 
 x = one_hot_encoding
 y = data[:, -1]
@@ -80,8 +107,8 @@ model.add(Dense(1, activation='sigmoid'))
 model.compile(loss='binary_crossentropy', optimizer='sgd', metrics=['accuracy'])
 
 
-model.fit(X_train, y_train, epochs=500, batch_size=10, validation_data=(X_test, y_test))
-model.save('model/')
+#model.fit(X_train, y_train, epochs=500, batch_size=10, validation_data=(X_test, y_test))
+model = keras.models.load_model('model2/')
 # evaluate the keras model
 _, accuracy = model.evaluate(X_test, y_test)
 print('Accuracy: %.2f' % (accuracy*100))
@@ -89,4 +116,4 @@ pred = model.predict(X_test)
 pred[pred >= 0.5] = 1
 pred[pred < 0.5] = 0
 print(precision_recall_fscore_support(y_test, pred, average='macro'))
-
+write_data(model)

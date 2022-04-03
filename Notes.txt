@@ -25,3 +25,6 @@ extract  2347  of  4725  relevant:  1498  errors  0
 average in minutes 82.3906976744186
 -> Update all data
 
+Total records: 1522, positive: 43+172
+Accuracy: 89.84 (Tweets not matched, classified as no event, mention about less data)
+(0.9478114478114479, 0.6025641025641025, 0.6426816824760969, None)
