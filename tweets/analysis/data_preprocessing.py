@@ -298,7 +298,6 @@ def computeDuration():
 
 
 def addGroundTruth():
-
     for file in os.listdir('ext/'):
         sensor_file = file[:-4] + '  ' + file[-4:]
         if file.__contains__('between'):
@@ -329,6 +328,63 @@ def addGroundTruth():
         data_output.to_csv('groundtruth/'+file)
 
 
+def addTweetsToSensor():
+    for file in os.listdir('../../output/'):
+        if os.path.exists('predicted_output/'+file):
+            sensor_data = pd.read_csv('../../output/' + file)
+            tweet_data = pd.read_csv('predicted_output/' + file)
+
+            data_output = pd.DataFrame()
+            for i, sensor_date in enumerate(pd.to_datetime(sensor_data['date'])):
+                sensor_mints = sensor_date.day * 24 * 60 + sensor_date.hour * 60 + sensor_date.minute
+                found = False
+                for j, tweet_date in enumerate(pd.to_datetime(tweet_data['created_at'])):
+                    tweet_mints = tweet_date.day * 24 * 60 + tweet_date.hour * 60 + tweet_date.minute
+                    if sensor_mints - tweet_mints < 82.39 and sensor_mints - tweet_mints >= 0:
+                        sensor_record   = sensor_data.values[i]
+                        tweet_user      = tweet_data['user_name'].values[j]
+                        tweet_foll      = tweet_data['followers_count'].values[j]
+                        tweet_ver       = tweet_data['verified'].values[j]
+                        tweet_pre       = tweet_data['predicted'].values[j]
+                        tweet_record    = [tweet_pre, tweet_user, tweet_foll, tweet_ver]
+                        record = list(sensor_record[1:]) + tweet_record
+                        data_output = data_output.append(pd.DataFrame([record],columns=['sensor','date','class','reason','speed','feat1','feat2','feat3',
+                                                                           'feat4','feat5','feat6','predicted','user_name', 'followers_count', 'verified']))
+                        found = True
+                        break
+
+                if found == False:
+                    sensor_record = sensor_data.values[i]
+                    tweet_user  = ''
+                    tweet_foll  = 0
+                    tweet_ver   = 0
+                    tweet_pre   = 2
+                    tweet_record = [tweet_pre, tweet_user, tweet_foll, tweet_ver]
+                    record = list(sensor_record[1:]) + tweet_record
+                    data_output = data_output.append(pd.DataFrame([record],
+                                                                  columns=['sensor', 'date', 'class', 'reason', 'speed',
+                                                                           'feat1', 'feat2', 'feat3',
+                                                                           'feat4', 'feat5', 'feat6', 'predicted',
+                                                                           'user_name', 'followers_count', 'verified']))
+
+            data_output.to_csv('final_output/'+file)
+        else:
+            sensor_data = pd.read_csv('../../output/' + file)
+            data_output = pd.DataFrame()
+            for i, sensor_date in enumerate(pd.to_datetime(sensor_data['date'])):
+                sensor_record = sensor_data.values[i]
+                tweet_user = ''
+                tweet_foll = 0
+                tweet_ver = 0
+                tweet_pre = 2
+                tweet_record = [tweet_pre, tweet_user, tweet_foll, tweet_ver]
+                record = list(sensor_record[1:]) + tweet_record
+                data_output = data_output.append(pd.DataFrame([record],
+                                                              columns=['sensor', 'date', 'class', 'reason', 'speed',
+                                                                       'feat1', 'feat2', 'feat3',
+                                                                       'feat4', 'feat5', 'feat6', 'predicted',
+                                                                       'user_name', 'followers_count', 'verified']))
+            data_output.to_csv('final_output/' + file)
 #data = pd.read_csv('C:/Users/moham/PycharmProjects/software_paper/tweets/analysis/output/removedMissingData.csv')
 
 #junctions = ['j1A'] + ['j'+str(i) for i in range(2, 32)]
@@ -346,7 +402,8 @@ def addGroundTruth():
 #avg_duration = computeDuration()
 #print('average in minutes', avg_duration)
 # Matching (put words list corresponding each class
-addGroundTruth()
+#addGroundTruth()
+# Involve prediction to original sensor data
 
 
-
+addTweetsToSensor()
