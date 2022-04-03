@@ -1,163 +1,60 @@
 ,10,10,10,tweet_id,text,created_at,user_id,user_name,user_description,followers_count,verified,cause
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
+0,675,681.0,1159.0,8.170553656910356e+17,"#M25 heavy anticlockwise between J13, Staines and J12 M3",2017-01-05T17:09:13.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,heavy
+0,686,692.0,1177.0,8.170713751899955e+17,#M25 - MINOR - Surrey Anti-Clockwise - Congestion - Between J13 for A30 Surrey and J12 for M3 Thorpe,2017-01-05T18:12:50.000Z,8.11607645018792e+17,UK Motorways Traffic,This is traffic updates of all motorways in the uk 🇬🇧! I'm available every day between 6:30AM - 20:00PM on weekdays and weekends 7AM to 19PM,568.0,0.0,conges
+0,873,880.0,1503.0,8.174222454925722e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/l5EmoAw0RN,2017-01-06T17:27:04.000Z,797685578.0,Live Traffic - M25,Live #M25 traffic information updated every 5 minutes by @MotorwayCameras - SEE the traffic live CCTV images @ http://t.co/xQQta8vJRK,54500.0,0.0,conges full
+0,874,881.0,1504.0,8.174222468431544e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/LwI3prBa31,2017-01-06T17:27:05.000Z,2203877580.0,Traffic - All M'ways,Live #traffic news and information from every UK #motorway! Now updated every 5 minutes by @MotorwayCameras - SEE the traffic @ http://t.co/WFCp3NaSjI,2600.0,0.0,conges full
+0,1137,1147.0,1980.0,8.19222085054722e+17,"#M25 queuing anticlockwise between J14, Heathrow Terminal 4 and J12 M3 and again between J11, Chertsey and J10, Wisley Interchange",2017-01-11T16:39:00.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,queu
+0,1145,1155.0,1994.0,8.192312021545984e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/l5EmoAw0RN,2017-01-11T17:15:13.000Z,797685578.0,Live Traffic - M25,Live #M25 traffic information updated every 5 minutes by @MotorwayCameras - SEE the traffic live CCTV images @ http://t.co/xQQta8vJRK,54500.0,0.0,conges full
+0,1146,1156.0,1995.0,8.192312037609923e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/LwI3prBa31,2017-01-11T17:15:14.000Z,2203877580.0,Traffic - All M'ways,Live #traffic news and information from every UK #motorway! Now updated every 5 minutes by @MotorwayCameras - SEE the traffic @ http://t.co/WFCp3NaSjI,2600.0,0.0,conges full
+0,1150,1160.0,1999.0,8.192312853693727e+17,M25 anti-clockwise between J13 and J12 | Anti-Clockwise | Congestion,2017-01-11T17:15:33.000Z,20979719.0,South East Traffic News,Latest traffic news in the South East UK.,10952.0,0.0,conges
+0,1156,1166.0,2006.0,8.192325737297347e+17,"#M25 queues anticlockwise between J14, Heathrow Terminal 4 and J10, Wisley Interchange",2017-01-11T17:20:40.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,queu
+0,1271,1281.0,2176.0,8.19450109272408e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/l5EmoAw0RN,2017-01-12T07:45:05.000Z,797685578.0,Live Traffic - M25,Live #M25 traffic information updated every 5 minutes by @MotorwayCameras - SEE the traffic live CCTV images @ http://t.co/xQQta8vJRK,54500.0,0.0,conges full
+0,1272,1282.0,2177.0,8.194501102119854e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/LwI3prBa31,2017-01-12T07:45:05.000Z,2203877580.0,Traffic - All M'ways,Live #traffic news and information from every UK #motorway! Now updated every 5 minutes by @MotorwayCameras - SEE the traffic @ http://t.co/WFCp3NaSjI,2600.0,0.0,conges full
+0,1275,1285.0,2181.0,8.194516214741115e+17,M25 anti-clockwise between J13 and J12 | Anti-Clockwise | Congestion https://t.co/1CbNopG8mu,2017-01-12T07:51:05.000Z,544501743.0,Parability,"HELPING A HUMAN RACE - 
+Increasing each others abilities and access to opportunities",232.0,0.0,conges
+0,1518,1528.0,2623.0,8.196126862667448e+17,M25 anti-clockwise between J13 and J12 | Congestion https://t.co/mZK9Mgf9wh,2017-01-12T18:31:06.000Z,224657803.0,National Highways: South-East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
 🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,heavy
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
+General enquiry: phone our contact centre 0300 123 5000",105713.0,0.0,conges
+0,1526,1536.0,2635.0,8.196130530126111e+17,M25 anti-clockwise between J13 and J12 | Congestion https://t.co/MWkd7aNUYs Thx 2 HW England,2017-01-12T18:32:34.000Z,4122209764.0,trafficjamnetwork,Account has been set up to allow people to share their traffic jam or congestion info all from one feed.,1909.0,0.0,conges
+0,1535,1545.0,2648.0,8.196146961310761e+17,M25 anti-clockwise between J13 and J12 | Anti-Clockwise | Congestion,2017-01-12T18:39:05.000Z,20979719.0,South East Traffic News,Latest traffic news in the South East UK.,10952.0,0.0,conges
+0,2266,2276.0,3935.0,8.209442078252933e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/l5EmoAw0RN,2017-01-16T10:42:06.000Z,797685578.0,Live Traffic - M25,Live #M25 traffic information updated every 5 minutes by @MotorwayCameras - SEE the traffic live CCTV images @ http://t.co/xQQta8vJRK,54500.0,0.0,conges full
+0,2267,2277.0,3936.0,8.209442091213169e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/LwI3prBa31,2017-01-16T10:42:06.000Z,2203877580.0,Traffic - All M'ways,Live #traffic news and information from every UK #motorway! Now updated every 5 minutes by @MotorwayCameras - SEE the traffic @ http://t.co/WFCp3NaSjI,2600.0,0.0,conges full
+0,2268,2278.0,3937.0,8.2094495491874e+17,M25 anti-clockwise between J13 and J12 | Anti-Clockwise | Congestion,2017-01-16T10:45:04.000Z,20979719.0,South East Traffic News,Latest traffic news in the South East UK.,10952.0,0.0,conges
+0,2269,2279.0,3938.0,8.209449628669501e+17,M25 anti-clockwise between J13 and J12 | Anti-Clockwise | Congestion https://t.co/tvgcsp43eh,2017-01-16T10:45:06.000Z,544501743.0,Parability,"HELPING A HUMAN RACE - 
+Increasing each others abilities and access to opportunities",232.0,0.0,conges
+0,2470,2480.0,4277.0,8.212687251145687e+17,#M25 Heavy anticlockwise between J13 A30 (Staines) and J12 M3 (Thorpe Interchange).,2017-01-17T08:11:37.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,heavy
+0,2785,2795.0,4751.0,8.216458012229673e+17,Delays on #M25 anti-clockwise between J12 and J10 due to an incident which as now cleared. Delays should start easing.,2017-01-18T09:09:59.000Z,224657803.0,National Highways: South-East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
 🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
+General enquiry: phone our contact centre 0300 123 5000",105713.0,0.0,delay incident
+0,2786,2796.0,4753.0,8.216460861420503e+17,Delays on #M25 anti-clockwise between J12 and J10 due to an incident which as now cleared. Delays should start easing. Thx 2 HW England,2017-01-18T09:11:07.000Z,4122209764.0,trafficjamnetwork,Account has been set up to allow people to share their traffic jam or congestion info all from one feed.,1909.0,0.0,delay incident
+0,2868,2878.0,4903.0,8.217648546839306e+17,"#M25 heavy anticlockwise between J13, Staines and J12 M3",2017-01-18T17:03:03.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,heavy
+0,2931,2941.0,4989.0,8.217897583388262e+17,"#M25 very slow anticlockwise between J13, Staines and J12 M3",2017-01-18T18:42:01.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,slow
+0,2935,2945.0,4996.0,8.2179337480192e+17,"#M25 returned to normal anticlockwise between J13, Staines and J12 M3",2017-01-18T18:56:23.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,
+0,3461,3471.0,5968.0,8.224735460269302e+17,"#M25 slow anticlockwise between J14, Heathrow Terminal 4 and J12 M3",2017-01-20T15:59:08.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,slow
+0,3464,3474.0,5971.0,8.22473795923542e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/l5EmoAw0RN,2017-01-20T16:00:08.000Z,797685578.0,Live Traffic - M25,Live #M25 traffic information updated every 5 minutes by @MotorwayCameras - SEE the traffic live CCTV images @ http://t.co/xQQta8vJRK,54500.0,0.0,conges full
+0,3466,3476.0,5974.0,8.224741699671982e+17,M25 anti-clockwise between J13 and J12 | Anti-Clockwise | Congestion https://t.co/HA19D8pwEQ,2017-01-20T16:01:37.000Z,544501743.0,Parability,"HELPING A HUMAN RACE - 
+Increasing each others abilities and access to opportunities",232.0,0.0,conges
+0,3468,3478.0,5979.0,8.22475407333036e+17,M25 anti-clockwise between J13 and J12 | Anti-Clockwise | Congestion,2017-01-20T16:06:32.000Z,20979719.0,South East Traffic News,Latest traffic news in the South East UK.,10952.0,0.0,conges
+0,3495,3505.0,6019.0,8.224889073757512e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/l5EmoANBJl,2017-01-20T17:00:11.000Z,797685578.0,Live Traffic - M25,Live #M25 traffic information updated every 5 minutes by @MotorwayCameras - SEE the traffic live CCTV images @ http://t.co/xQQta8vJRK,54500.0,0.0,conges full
+0,3549,3559.0,6093.0,8.225173866705347e+17,#M25 returned to normal anticlockwise between J15 M4 and J12 M3,2017-01-20T18:53:21.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,
+0,3914,3925.0,6700.0,8.234416949096653e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/l5EmoAw0RN,2017-01-23T08:06:13.000Z,797685578.0,Live Traffic - M25,Live #M25 traffic information updated every 5 minutes by @MotorwayCameras - SEE the traffic live CCTV images @ http://t.co/xQQta8vJRK,54500.0,0.0,conges full
+0,3918,3929.0,6705.0,8.234426628164977e+17,M25 anti-clockwise between J13 and J12 | Anti-Clockwise | Congestion,2017-01-23T08:10:04.000Z,20979719.0,South East Traffic News,Latest traffic news in the South East UK.,10952.0,0.0,conges
+0,4307,4319.0,7292.0,8.238083481642353e+17,M25 anti-clockwise between J13 and J12 | Congestion https://t.co/nmWEpFMrvk,2017-01-24T08:23:10.000Z,224657803.0,National Highways: South-East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
 🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,queu
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,queu
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,accident
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,heavy
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges accident block
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,delay incident
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,delay incident
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,heavy
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,slow
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,slow
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,queu
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,slow
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,slow
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges full
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,accident
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,conges
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,accident slow
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,slow
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,slow
-0,24,24.0,74.0,8.155744397859922e+17,#M25 clockwise within J27 after M11 J6 northbound access | Congestion https://t.co/0kMJUBRmxG,2017-01-01T15:04:33.000Z,224662544.0,National Highways: East,"OFFICIAL FEED. Live traffic info on England’s motorways + major A roads. 
-🆘 In an emergency: phone 999 
-General enquiry: phone our contact centre 0300 123 5000",61664.0,0.0,
+General enquiry: phone our contact centre 0300 123 5000",105713.0,0.0,conges
+0,4310,4322.0,7296.0,8.238089057131725e+17,M25 anti-clockwise between J13 and J12 | Congestion https://t.co/2l4FcdqeqL Thx 2 HW England,2017-01-24T08:25:23.000Z,4122209764.0,trafficjamnetwork,Account has been set up to allow people to share their traffic jam or congestion info all from one feed.,1909.0,0.0,conges
+0,4384,4396.0,7384.0,8.238245530129285e+17,M25 anti-clockwise between J13 and J12 | Anti-Clockwise | Congestion,2017-01-24T09:27:34.000Z,20979719.0,South East Traffic News,Latest traffic news in the South East UK.,10952.0,0.0,conges
+0,4402,4414.0,7414.0,8.23839777619329e+17,#M25 Queueing traffic on M25 anticlockwise between J13 A30 (Staines) and J12 M3.,2017-01-24T10:28:03.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,queu
+0,4508,4524.0,7563.0,8.239302386944901e+17,"#M25 slow anticlockwise between J13, Staines and J12 M3",2017-01-24T16:27:31.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,slow
+0,4529,4545.0,7589.0,8.239424878448148e+17,"#M25 slow anticlockwise between J14, Heathrow Terminal 4 and J12 M3",2017-01-24T17:16:11.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,slow
+0,4796,4814.0,8037.0,8.243046184233902e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/l5EmoAw0RN,2017-01-25T17:15:10.000Z,797685578.0,Live Traffic - M25,Live #M25 traffic information updated every 5 minutes by @MotorwayCameras - SEE the traffic live CCTV images @ http://t.co/xQQta8vJRK,54500.0,0.0,conges full
+0,4876,4894.0,8159.0,8.243325364026778e+17,M25 anti-clockwise between J13 and J12 | Anti-Clockwise | Congestion,2017-01-25T19:06:06.000Z,20979719.0,South East Traffic News,Latest traffic news in the South East UK.,10952.0,0.0,conges
+0,5203,5222.0,8769.0,8.25024104038273e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/l5EmoAw0RN,2017-01-27T16:54:09.000Z,797685578.0,Live Traffic - M25,Live #M25 traffic information updated every 5 minutes by @MotorwayCameras - SEE the traffic live CCTV images @ http://t.co/xQQta8vJRK,54500.0,0.0,conges full
+0,5204,5223.0,8770.0,8.250241050784809e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/LwI3prBa31,2017-01-27T16:54:09.000Z,2203877580.0,Traffic - All M'ways,Live #traffic news and information from every UK #motorway! Now updated every 5 minutes by @MotorwayCameras - SEE the traffic @ http://t.co/WFCp3NaSjI,2600.0,0.0,conges full
+0,5354,5373.0,9004.0,8.253034222325842e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/l5EmoAw0RN,2017-01-28T11:24:03.000Z,797685578.0,Live Traffic - M25,Live #M25 traffic information updated every 5 minutes by @MotorwayCameras - SEE the traffic live CCTV images @ http://t.co/xQQta8vJRK,54500.0,0.0,conges full
+0,5355,5374.0,9005.0,8.253034239061729e+17,#M25 anti-clockwise between J13 and J12 - Congestion - Full details at https://t.co/LwI3prBa31,2017-01-28T11:24:04.000Z,2203877580.0,Traffic - All M'ways,Live #traffic news and information from every UK #motorway! Now updated every 5 minutes by @MotorwayCameras - SEE the traffic @ http://t.co/WFCp3NaSjI,2600.0,0.0,conges full
+0,5361,5380.0,9020.0,8.253168869382021e+17,M25 anti-clockwise between J13 and J12 | Anti-Clockwise | Congestion,2017-01-28T12:17:34.000Z,20979719.0,South East Traffic News,Latest traffic news in the South East UK.,10952.0,0.0,conges
+0,5371,5390.0,9035.0,8.253357889341522e+17,#M25 Traffic returned to normal on M25 anticlockwise between J13 A30 (Staines) and J12 M3.,2017-01-28T13:32:40.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,
+0,5915,5936.0,9975.0,8.264688276135608e+17,"#M25 slow anticlockwise between J13, Staines and J12 M3",2017-01-31T16:34:58.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,slow
+0,5946,5967.0,10019.0,8.26482273105109e+17,"#M25 slow anticlockwise between J14, Heathrow Terminal 4 and J12 M3",2017-01-31T17:28:23.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,slow
+0,5989,6010.0,10074.0,8.264904423845396e+17,"#M25 returned to normal anticlockwise between J13, Staines and J12 M3",2017-01-31T18:00:51.000Z,387584807.0,Radio Jackie Travel,Tweeting you information on the roads and rails between 7am and 9pm. For the very latest info please stay tuned to 107.8 Radio Jackie on the air and online,6087.0,0.0,

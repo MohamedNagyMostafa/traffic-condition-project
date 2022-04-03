@@ -14,7 +14,7 @@ def filter_redundancy(data, junctions, name='filtered_tweets'):
         for junction in junctions:
             if data.values[i, 1].lower().__contains__(junction):
                 counter += 1
-                filtered_data = filtered_data.append(data.iloc[i])
+                filtered_data = filtered_data.append(data.iloc[k])
 
                 break
     filtered_data.to_csv(name+'.csv')
@@ -194,11 +194,11 @@ def generatePerJunction(data):
     error    = 0
     out = defaultdict(list)
     output_file = pd.DataFrame()
-    for i, content in enumerate(data['text']):
-        record = data.iloc[i]
+    for k, content in enumerate(data['text']):
 
         content = ' '.join(removeWords(content.split(' '), ['https']))
         scheme.addContent(content)
+
         complete, causes, directions, connections, junctions = scheme.extractSchemes()
         if len(connections) > 0 and len(directions) > 0 and len(junctions) > 1:
             if directions[0] == 'anticlockwise' or directions[0].__contains__('-'):
@@ -209,7 +209,7 @@ def generatePerJunction(data):
                     text = 'The M25 ' + (
                         directions[0] if not directions[0].__contains__('-') else 'anticlockwise') + ' between junctions ' \
                            + ('J'+str(i+1) + ' and ' + 'J'+str(i))
-                    out[text].append(list(data.iloc[i].values) + [' '.join(causes)])
+                    out[text].append(list(data.iloc[k].values) + [' '.join(causes)])
             else:
                 jun1 = int(junctions[0][1:])
                 jun2 = int(junctions[1][1:])
@@ -218,7 +218,7 @@ def generatePerJunction(data):
                     text = 'The M25 ' + (
                         directions[0] if not directions[0].__contains__('-') else 'anticlockwise') + ' between junctions ' \
                            + ('J'+str(i) + ' and ' + 'J'+str(i+1))
-                    out[text].append(list(data.iloc[i].values) + [' '.join(causes)])
+                    out[text].append(list(data.iloc[k].values) + [' '.join(causes)])
 
             if len(junctions) > 3:
                 if directions[0] == 'anticlockwise' or directions[0].__contains__('-'):
@@ -230,7 +230,7 @@ def generatePerJunction(data):
                             directions[0] if not directions[0].__contains__(
                                 '-') else 'anticlockwise') + ' between junctions ' \
                                + ('J' + str(i+1) + ' and ' + 'J' + str(i))
-                        out[text].append(list(data.iloc[i].values) + [' '.join(causes)])
+                        out[text].append(list(data.iloc[k].values) + [' '.join(causes)])
                 else:
                     jun1 = int(junctions[2][1:])
                     jun2 = int(junctions[3][1:])
@@ -240,17 +240,17 @@ def generatePerJunction(data):
                             directions[0] if not directions[0].__contains__(
                                 '-') else 'anticlockwise') + ' between junctions ' \
                                + ('J' + str(i) + ' and ' + 'J' + str(i + 1))
-                        out[text].append(list(data.iloc[i].values) + [' '.join(causes)])
+                        out[text].append(list(data.iloc[k].values) + [' '.join(causes)])
 
                 if len(junctions) == 3:
                     text = 'The M25 ' + (directions[0] if not directions[0].__contains__('-') else 'anticlockwise') \
                                + ' at junction ' + junctions[2]
-                    out[text].append(list(data.iloc[i].values) + [' '.join(causes)])
+                    out[text].append(list(data.iloc[k].values) + [' '.join(causes)])
         elif len(connections) > 0 and len(directions) > 0 and len(junctions) > 0:
             for junction in junctions:
                 text = 'The M25 '+(directions[0] if not directions[0].__contains__('-') else 'anticlockwise') \
                            + ' at junction ' + junction
-                out[text].append(list(data.iloc[i].values) + [' '.join(causes)])
+                out[text].append(list(data.iloc[k].values) + [' '.join(causes)])
         scheme.clear()
 
     for key in out:
@@ -259,9 +259,23 @@ def generatePerJunction(data):
         for value in out[key]:
             file_out = file_out.append(pd.DataFrame([value], columns=['10','10','10','tweet_id', 'text', 'created_at', 'user_id', 'user_name', 'user_description', 'followers_count', 'verified', 'cause']))
         file_out.to_csv('ext/'+key+'.csv')
+
+
+def computeDuration():
+    count = 0
+    duration = 0
+    for file in os.listdir('ext/'):
+        sensor_file = file[:-4] + '  ' + file[-4:]
+        if file.__contains__('between'):
+            sensor_file =file[:-11] +' '+ file[-11:-4] +'  ' + file[-4:]
+
+        sensor_data = pd.read_csv('../../output/' + sensor_file)
+        tweet_data  = pd.read_csv('ext/'+file)
+        tweet_data['']
+
 data = pd.read_csv('C:/Users/moham/PycharmProjects/software_paper/tweets/analysis/output/removedMissingData.csv')
 
-junctions = ['j1A'] + ['j'+str(i) for i in range(2, 32)]
+#junctions = ['j1A'] + ['j'+str(i) for i in range(2, 32)]
 
 # Only get tweets contain junctions
 #filter_redundancy(data, junctions)
@@ -272,11 +286,11 @@ junctions = ['j1A'] + ['j'+str(i) for i in range(2, 32)]
 #removeDataWithMissingInfo(data)
 # Tweets file for each location
 generatePerJunction(data)
+# Compute duration, average.
+#avg_duration = computeDuration()
 # Matching (put words list corresponding each class
 
 # Preprocessing for neural network.
 # Training & Testing.
 
-
-print(len(data.values))
 

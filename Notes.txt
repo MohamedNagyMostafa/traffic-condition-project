@@ -20,3 +20,6 @@ Scheme: slow(cause) between(connector) j9(junction) j12(junction) clockwise(dire
 
 extract  4449  of  4725  single:  4449
 extract  2347  of  4725  relevant:  1498  errors  0
+
+-> Average duration from tweet until the ending of the event.
+-> Update all data
