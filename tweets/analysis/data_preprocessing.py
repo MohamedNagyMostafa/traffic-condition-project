@@ -328,6 +328,7 @@ def addGroundTruth():
 
         data_output.to_csv('groundtruth/'+file)
 
+
 #data = pd.read_csv('C:/Users/moham/PycharmProjects/software_paper/tweets/analysis/output/removedMissingData.csv')
 
 #junctions = ['j1A'] + ['j'+str(i) for i in range(2, 32)]
@@ -345,9 +346,7 @@ def addGroundTruth():
 #avg_duration = computeDuration()
 #print('average in minutes', avg_duration)
 # Matching (put words list corresponding each class
-#addGroundTruth()
-# Preprocessing for neural network.
+addGroundTruth()
 
-# Training & Testing.
 
 
