@@ -3,7 +3,7 @@ Relevant tweets number:  6146  out of  10295
 Number of unique words: 88985
 Number of cleaned words: 72(Chosen words)
 weather: 36(Weather condition)
-human reaction: 67(Human reaction)
+human reaction: (67Human reaction)
 road events: 5662(Road Events)
 accident: 803(Mention accident)
 caused event: 1261(Event causes)
@@ -28,3 +28,4 @@ average in minutes 82.3906976744186
 Total records: 1522, positive: 43+172
 Accuracy: 89.84 (Tweets not matched, classified as no event, mention about less data)
 (0.9478114478114479, 0.6025641025641025, 0.6426816824760969, None)
+
