@@ -3,8 +3,10 @@ import os
 import pandas as pd
 import numpy as np
 import re
+import matplotlib.pyplot as plt
 from collections import defaultdict
 from data_structure.ReadScheme import *
+import seaborn as sns
 
 def filter_redundancy(data, junctions, name='filtered_tweets'):
     counter = 0
@@ -264,12 +266,13 @@ def generatePerJunction(data):
 def computeDuration():
     count = 0
     duration = 0
+    points = []
     for file in os.listdir('ext/'):
-        sensor_file = file[:-4] + '  ' + file[-4:]
-        if file.__contains__('between'):
-            sensor_file =file[:-11] +' '+ file[-11:-4] +'  ' + file[-4:]
+        #sensor_file = file[:-4] + '  ' + file[-4:]
+        #if file.__contains__('between'):
+            #sensor_file =file[:-11] +' '+ file[-11:-4] +'  ' + file[-4:]
 
-        sensor_data = pd.read_csv('../../output/' + sensor_file)
+        sensor_data = pd.read_csv('../../output/' + file)
         tweet_data  = pd.read_csv('ext/'+file)
         for tweet_date in pd.to_datetime(tweet_data['created_at']):
             tweet_mints = tweet_date.day * 24 * 60 + tweet_date.hour * 60 + tweet_date.minute
@@ -291,9 +294,17 @@ def computeDuration():
                         start = False
                         end_time = sensor_mints
                         duration += end_time - start_time
+                        points.append(end_time - start_time)
                         count+=1
                         print('average duration over time', duration/float(count))
                         break
+    sns.set()
+
+    plt.hist(points)
+    plt.plot([duration/float(count), duration/float(count)],[0, 41])
+    plt.xlabel("Duration in Minutes")
+    plt.ylabel("Tweets Frequency")
+    plt.show()
     return duration/float(count)
 
 
@@ -398,12 +409,9 @@ def addTweetsToSensor():
 #removeDataWithMissingInfo(data)
 # Tweets file for each location
 #generatePerJunction(data)
-# Compute duration, average.
-#avg_duration = computeDuration()
+#Compute duration, average.
+avg_duration = computeDuration()
 #print('average in minutes', avg_duration)
 # Matching (put words list corresponding each class
 #addGroundTruth()
 # Involve prediction to original sensor data
-
-
-addTweetsToSensor()

@@ -13,6 +13,16 @@ def readAllFiles():
     return out
 
 data = readAllFiles()
+datetime = pd.to_datetime(data['date'])
+time_in_mints = []
+for record in datetime:
+    time_in_mints.append(record.hour*60 + record.minute)
+
+pred_num = data['predicted'].values
+pred = pred_num.copy()
+pred_num[pred == 2] = 0
+pred_num[pred == 1] = 1
+pred_num[pred == 0] = 2
 
 feature_data = np.concatenate((np.expand_dims(data['speed'].values, axis=1),
                                np.expand_dims(data['feat1'].values, axis=1),
@@ -21,10 +31,13 @@ feature_data = np.concatenate((np.expand_dims(data['speed'].values, axis=1),
                                np.expand_dims(data['feat4'].values, axis=1),
                                np.expand_dims(data['feat5'].values, axis=1),
                                np.expand_dims(data['feat6'].values, axis=1),
-                               np.expand_dims(data['predicted'].values, axis=1),
+                               np.expand_dims(pred_num, axis=1),
                                np.expand_dims(data['class'].values, axis=1)), axis=1)
 
-feature_dataframe = pd.DataFrame(feature_data, columns=['speed', 'feat1', 'feat2', 'feat3', 'feat4', 'feat5', 'feat6', 'predicted','class'])
+feature_dataframe = pd.DataFrame(feature_data, columns=['speed', 'feat1', 'feat2', 'feat3', 'feat4', 'feat5', 'feat6', 'predicted (Tweets)','class'])
+
+plt.rcParams.update({'font.size': 16, 'xtick.labelsize': 12, 'ytick.labelsize': 16})
 
 ax = sns.heatmap(feature_dataframe.astype(float).corr(),vmin=-1, vmax=1, annot=True)
+
 plt.show()
