@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 def readAllFiles():
     out = pd.DataFrame(columns=['index','sensor','date','class','reason','speed','feat1','feat2','feat3',
                        'feat4','feat5','feat6','predicted','user_name', 'followers_count', 'verified'])
-    for file in os.listdir('../final_output/'):
-        file_path = '../final_output/'+file
+    for file in os.listdir('../fina_output2/'):
+        file_path = '../fina_output2/'+file
         out = out.append(pd.read_csv(file_path))
 
     return out

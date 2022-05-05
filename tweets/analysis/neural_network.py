@@ -1,15 +1,20 @@
 import pandas as pd
 import numpy as np
 import os
+from sklearn import svm
 
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report,confusion_matrix
 from keras.models import Sequential
 from keras.layers import Dense
-from keras.layers import Dropout
+from imblearn.pipeline import Pipeline
+from keras.layers import Dropout,RandomFourierFeatures
+from imblearn.under_sampling import RandomUnderSampler
+
 from sklearn.metrics import precision_recall_fscore_support
 from tensorflow import keras
+from imblearn.over_sampling import SMOTE
 from keras.wrappers.scikit_learn import KerasClassifier
 
 accepted_words = np.array(['rain','snow','patience','patient','sad','conges','jam','delay','stop','slow','block','wait', 'queu', 'flood','hard','abnormal',
@@ -58,7 +63,7 @@ def write_data(model):
                                                                        'user_name', 'user_description',
                                                                        'followers_count', 'verified', 'cause',
                                                                        'class', 'predicted'])
-        out.to_csv('predicted_output/'+ file)
+        out.to_csv('predicted_output2/'+ file)
 
 
 data = read_data()
@@ -84,7 +89,10 @@ for i, cause in enumerate(data[:,0]):
 
 x = one_hot_encoding
 y = data[:, -1]
-
+y=y.astype('int')
+print(y)
+over = SMOTE()
+#x, y = over.fit_resample(x, y)
 X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.20, random_state=40)
 print(np.sum(y_test))
 print(np.sum(y_train))
@@ -97,18 +105,18 @@ y_test = np.asarray(y_test).astype(np.float32)
 
 model = Sequential()
 model.add(Dense(200, input_dim=X_train.shape[1], activation='relu'))
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 model.add(Dense(200, activation='relu'))
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 model.add(Dense(200, activation='relu'))
-model.add(Dropout(0.5))
+model.add(Dropout(0.2))
 
 model.add(Dense(1, activation='sigmoid'))
-model.compile(loss='binary_crossentropy', optimizer='sgd', metrics=['accuracy'])
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 
-#model.fit(X_train, y_train, epochs=500, batch_size=10, validation_data=(X_test, y_test))
-model = keras.models.load_model('model2/')
+model.fit(X_train, y_train, epochs=100, batch_size=10, validation_data=(X_test, y_test))
+#model = keras.models.load_model('model2/')
 # evaluate the keras model
 _, accuracy = model.evaluate(X_test, y_test)
 print('Accuracy: %.2f' % (accuracy*100))
@@ -116,4 +124,18 @@ pred = model.predict(X_test)
 pred[pred >= 0.5] = 1
 pred[pred < 0.5] = 0
 print(precision_recall_fscore_support(y_test, pred, average='macro'))
-write_data(model)
+#write_data(model)
+#model.save('model_oversampling')
+print(confusion_matrix(y_test,pred))
+print(classification_report(y_test,pred))
+'SVM : ========================='
+'''
+clf = svm.SVC()
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+
+print(confusion_matrix(y_test,y_pred))
+print(classification_report(y_test,y_pred))
+'''
+#===========================
+

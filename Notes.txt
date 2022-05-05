@@ -29,3 +29,13 @@ Total records: 1522, positive: 43+172
 Accuracy: 89.84 (Tweets not matched, classified as no event, mention about less data)
 (0.9478114478114479, 0.6025641025641025, 0.6426816824760969, None)
 
+
+resampling
+(0.7685384041759881, 0.76331529687043, 0.76183970856102, None)
+
+              precision    recall  f1-score   support
+
+         0.0       0.82      0.70      0.76       262
+         1.0       0.74      0.85      0.79       261
+
+    accuracy                           0.77       523

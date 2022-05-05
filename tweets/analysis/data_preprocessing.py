@@ -341,9 +341,9 @@ def addGroundTruth():
 
 def addTweetsToSensor():
     for file in os.listdir('../../output/'):
-        if os.path.exists('predicted_output/'+file):
+        if os.path.exists('predicted_output2/'+file):
             sensor_data = pd.read_csv('../../output/' + file)
-            tweet_data = pd.read_csv('predicted_output/' + file)
+            tweet_data = pd.read_csv('predicted_output2/' + file)
 
             data_output = pd.DataFrame()
             for i, sensor_date in enumerate(pd.to_datetime(sensor_data['date'])):
@@ -378,7 +378,7 @@ def addTweetsToSensor():
                                                                            'feat4', 'feat5', 'feat6', 'predicted',
                                                                            'user_name', 'followers_count', 'verified']))
 
-            data_output.to_csv('final_output/'+file)
+            data_output.to_csv('fina_output2/'+file)
         else:
             sensor_data = pd.read_csv('../../output/' + file)
             data_output = pd.DataFrame()
@@ -395,7 +395,7 @@ def addTweetsToSensor():
                                                                        'feat1', 'feat2', 'feat3',
                                                                        'feat4', 'feat5', 'feat6', 'predicted',
                                                                        'user_name', 'followers_count', 'verified']))
-            data_output.to_csv('final_output/' + file)
+            data_output.to_csv('fina_output2/' + file)
 #data = pd.read_csv('C:/Users/moham/PycharmProjects/software_paper/tweets/analysis/output/removedMissingData.csv')
 
 #junctions = ['j1A'] + ['j'+str(i) for i in range(2, 32)]
@@ -410,8 +410,9 @@ def addTweetsToSensor():
 # Tweets file for each location
 #generatePerJunction(data)
 #Compute duration, average.
-avg_duration = computeDuration()
+#avg_duration = computeDuration()
 #print('average in minutes', avg_duration)
 # Matching (put words list corresponding each class
 #addGroundTruth()
 # Involve prediction to original sensor data
+addTweetsToSensor()
