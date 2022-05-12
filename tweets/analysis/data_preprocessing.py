@@ -8,6 +8,14 @@ from collections import defaultdict
 from data_structure.ReadScheme import *
 import seaborn as sns
 
+accepted_words = np.array(['rain','snow','patience','patient','sad','conges','jam','delay','stop','slow','block','wait', 'queu', 'flood','hard','abnormal',
+                      'clos','stuffed','lock','roadwk','full','crook','heavy','obstruct','busy','stationary','standstill',
+                      'busi','heavi','shut','accident','incident','slip','trap','divert','overturn','spillage','crash','crane',
+                      'explosion','fire','burn','tch','lift','extinguish','stuck','breakdown','roll','damage','down','break','broken',
+                      'broke','abnmal','fallen','debris','repair','disrupt','collide','collision','injuries','injury','ambulance','smoke',
+                      'pain','emergency','police','officer','investigat','work','run','barrier','problem','trouble','issu','warn','caution'])
+
+
 def filter_redundancy(data, junctions, name='filtered_tweets'):
     counter = 0
     filtered_data = pd.DataFrame()
@@ -341,9 +349,9 @@ def addGroundTruth():
 
 def addTweetsToSensor():
     for file in os.listdir('../../output/'):
-        if os.path.exists('predicted_output2/'+file):
+        if os.path.exists('predicted_output_combin/'+file):
             sensor_data = pd.read_csv('../../output/' + file)
-            tweet_data = pd.read_csv('predicted_output2/' + file)
+            tweet_data = pd.read_csv('predicted_output_combin/' + file)
 
             data_output = pd.DataFrame()
             for i, sensor_date in enumerate(pd.to_datetime(sensor_data['date'])):
@@ -356,12 +364,12 @@ def addTweetsToSensor():
                         tweet_user      = tweet_data['user_name'].values[j]
                         tweet_foll      = tweet_data['followers_count'].values[j]
                         tweet_ver       = tweet_data['verified'].values[j]
-                        tweet_pre       = tweet_data['predicted'].values[j]
-                        tweet_record    = [tweet_pre, tweet_user, tweet_foll, tweet_ver]
-                        record = list(sensor_record[1:]) + tweet_record
+                        record = list(sensor_record[1:]) +list(tweet_data[['f'+str(i) for i in range(len(accepted_words))]].values[j]  * (82.39 - (sensor_mints - tweet_mints) )/82.39)
+                        print((82.39 - (sensor_mints - tweet_mints)))
                         data_output = data_output.append(pd.DataFrame([record],columns=['sensor','date','class','reason','speed','feat1','feat2','feat3',
-                                                                           'feat4','feat5','feat6','predicted','user_name', 'followers_count', 'verified']))
+                                                                           'feat4','feat5','feat6',]+['f'+str(i) for i in range(len(accepted_words))]))
                         found = True
+
                         break
 
                 if found == False:
@@ -371,14 +379,14 @@ def addTweetsToSensor():
                     tweet_ver   = 0
                     tweet_pre   = 2
                     tweet_record = [tweet_pre, tweet_user, tweet_foll, tweet_ver]
-                    record = list(sensor_record[1:]) + tweet_record
+                    record = list(sensor_record[1:]) + [0] * len(accepted_words)
+
                     data_output = data_output.append(pd.DataFrame([record],
                                                                   columns=['sensor', 'date', 'class', 'reason', 'speed',
                                                                            'feat1', 'feat2', 'feat3',
-                                                                           'feat4', 'feat5', 'feat6', 'predicted',
-                                                                           'user_name', 'followers_count', 'verified']))
+                                                                           'feat4', 'feat5', 'feat6'] + ['f'+str(i) for i in range(len(accepted_words))]))
 
-            data_output.to_csv('fina_output2/'+file)
+            data_output.to_csv('final_output_span/'+file)
         else:
             sensor_data = pd.read_csv('../../output/' + file)
             data_output = pd.DataFrame()
@@ -388,14 +396,13 @@ def addTweetsToSensor():
                 tweet_foll = 0
                 tweet_ver = 0
                 tweet_pre = 2
-                tweet_record = [tweet_pre, tweet_user, tweet_foll, tweet_ver]
-                record = list(sensor_record[1:]) + tweet_record
+
+                record = list(sensor_record[1:]) + [0] * len(accepted_words)
                 data_output = data_output.append(pd.DataFrame([record],
                                                               columns=['sensor', 'date', 'class', 'reason', 'speed',
                                                                        'feat1', 'feat2', 'feat3',
-                                                                       'feat4', 'feat5', 'feat6', 'predicted',
-                                                                       'user_name', 'followers_count', 'verified']))
-            data_output.to_csv('fina_output2/' + file)
+                                                                       'feat4', 'feat5', 'feat6']+ ['f'+str(i) for i in range(len(accepted_words))]))
+            data_output.to_csv('final_output_span/' + file)
 #data = pd.read_csv('C:/Users/moham/PycharmProjects/software_paper/tweets/analysis/output/removedMissingData.csv')
 
 #junctions = ['j1A'] + ['j'+str(i) for i in range(2, 32)]

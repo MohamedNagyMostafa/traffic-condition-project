@@ -58,12 +58,12 @@ def write_data(model):
         pred[pred >= 0.5]   = 1
         pred[pred < 0.5]    = 0
 
-        data_pred = np.concatenate((tweet_data.values, pred), axis=1)
+        data_pred = np.concatenate((tweet_data.values, X_train), axis=1)
         out = pd.DataFrame(data_pred[:,1:], columns=['tweet_id', 'text', 'created_at', 'user_id',
                                                                        'user_name', 'user_description',
                                                                        'followers_count', 'verified', 'cause',
-                                                                       'class', 'predicted'])
-        out.to_csv('predicted_output2/'+ file)
+                                                                       'class'] + ['f'+str(i) for i in range(len(X_train[0]))])
+        out.to_csv('predicted_output_combin/'+ file)
 
 
 data = read_data()
@@ -92,8 +92,13 @@ y = data[:, -1]
 y=y.astype('int')
 print(y)
 over = SMOTE()
-#x, y = over.fit_resample(x, y)
+
+over = SMOTE()
+x, y = over.fit_resample(x, y)
+
 X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.20, random_state=40)
+print('ss',len(X_train) , np.sum(y_train))
+
 print(np.sum(y_test))
 print(np.sum(y_train))
 
@@ -104,18 +109,15 @@ y_test = np.asarray(y_test).astype(np.float32)
 # Model architecture
 
 model = Sequential()
-model.add(Dense(200, input_dim=X_train.shape[1], activation='relu'))
-model.add(Dropout(0.2))
-model.add(Dense(200, activation='relu'))
-model.add(Dropout(0.2))
-model.add(Dense(200, activation='relu'))
-model.add(Dropout(0.2))
+model.add(Dense(50, input_dim=X_train.shape[1], activation='relu'))
+model.add(Dense(50, activation='relu'))
+model.add(Dense(50, activation='relu'))
 
 model.add(Dense(1, activation='sigmoid'))
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 
-model.fit(X_train, y_train, epochs=100, batch_size=10, validation_data=(X_test, y_test))
+#model.fit(x, y, epochs=100, batch_size=5, validation_data=(X_test, y_test))
 #model = keras.models.load_model('model2/')
 # evaluate the keras model
 _, accuracy = model.evaluate(X_test, y_test)
@@ -124,7 +126,7 @@ pred = model.predict(X_test)
 pred[pred >= 0.5] = 1
 pred[pred < 0.5] = 0
 print(precision_recall_fscore_support(y_test, pred, average='macro'))
-#write_data(model)
+write_data(model)
 #model.save('model_oversampling')
 print(confusion_matrix(y_test,pred))
 print(classification_report(y_test,pred))
